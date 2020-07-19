@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "5037970995",
+    "firebase_url": "https://chatverse-e75be.firebaseio.com",
+    "project_id": "chatverse-e75be",
+    "storage_bucket": "chatverse-e75be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5037970995:android:34c87c955520f73beeb546",
+        "android_client_info": {
+          "package_name": "co.aziz.chatverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5037970995-4jq21f3tg3fm5b80l3m2edpv4t5tetta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWnlCdvatLeyHgilyleuGX6zYDmnS10Qo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5037970995-4jq21f3tg3fm5b80l3m2edpv4t5tetta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
