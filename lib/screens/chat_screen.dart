@@ -27,6 +27,18 @@ class _ChatScreenState extends State<ChatScreen> {
       print(e);
     }
   }
+  /*void getMessages() async{
+    final messages= await _firestore.collection('messages').getDocuments();
+    for ( var message in messages.documents){
+      print(message.data);
+    }*/
+  void messagesStream() async{
+    await for(var snapshot in _firestore.collection("messages").snapshots()){
+      for(var message in snapshot.documents) {
+        print(message.data);
+      }
+    }
+  }
   @override
   void initState() {
     // TODO: implement initState
@@ -43,8 +55,9 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
               icon: Icon(Icons.close),
               onPressed: () {
-                _auth.signOut();
-                Navigator.pop((context));
+                messagesStream();
+                /*_auth.signOut();
+                Navigator.pop((context));*/
               }),
         ],
         title: Text('⚡️Chat'),
@@ -61,12 +74,15 @@ class _ChatScreenState extends State<ChatScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Expanded(
-                    child: TextField(
-                      style: TextStyle(color: Colors.black),
-                      onChanged: (value) {
-                        messageText=value;
-                      },
-                      decoration: InputDecoration(hintText: "Type your message here...",hintStyle: TextStyle(color: Colors.grey),),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: TextField(
+                        style: TextStyle(color: Colors.black),
+                        onChanged: (value) {
+                          messageText=value;
+                        },
+                        decoration: InputDecoration(hintText: "Type your message here...",hintStyle: TextStyle(color: Colors.grey),),
+                      ),
                     ),
                   ),
                   FlatButton(

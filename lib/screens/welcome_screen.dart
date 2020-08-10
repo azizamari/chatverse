@@ -49,9 +49,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                     height: animation.value*100,
                   ),
                 ),
-                TypewriterAnimatedTextKit(
-                  text: ["Flash chat","Aziz Amari","Chat now"],
-                  textStyle: TextStyle(
+                Text(
+                   "Chatverse",
+                  style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
                   ),
