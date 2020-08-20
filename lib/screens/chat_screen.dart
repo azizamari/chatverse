@@ -68,6 +68,23 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            StreamBuilder<QuerySnapshot>(
+              stream: _firestore.collection("messages").snapshots(),
+              // ignore: missing_return
+              builder:(context, snapshot){
+                if(snapshot.hasData){
+                  final messages=snapshot.data.documents;
+                  List<Text> messageWidgets=[];
+                  for(var message in messages){
+                    final messageText=message.data["text"];
+                    final messageSender=message.data["sender"];
+                    final messageWidget=Text('$messageText from $messageSender',style: TextStyle(color: Colors.black,fontSize: 20),);
+                    messageWidgets.add(messageWidget);
+                  }
+                  return Column(children: messageWidgets);
+                }
+              },
+            ),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
@@ -77,11 +94,11 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Padding(
                       padding: EdgeInsets.only(left: 20),
                       child: TextField(
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.black,fontSize: 20),
                         onChanged: (value) {
                           messageText=value;
                         },
-                        decoration: InputDecoration(hintText: "Type your message here...",hintStyle: TextStyle(color: Colors.grey),),
+                        decoration: InputDecoration(hintText: "Type your message here...",hintStyle: TextStyle(color: Colors.grey,fontSize: 20),),
                       ),
                     ),
                   ),
