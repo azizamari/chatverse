@@ -1,10 +1,10 @@
 <h1> Chatverse </h1>
 <h4>A mobile chatting app.</h4>
 <h3>Features:</h3>
+<h5> -Instantly send and receive messages</h5>
 <h5> -User Authentication using Firebase auth</h5>
 <h5> -Saving data in Firestore</h5>
 <h5> -Encrypted data</h5>
-<h5> -Instantly send and reveive messages</h5>
 <br>
 <h5>Welcome screen</h5><br>
 <img src="./readme-assets/1.jpg" width="30%" height="30%">
