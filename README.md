@@ -5,8 +5,12 @@
 <h5> -Saving data in Firestore</h5>
 <h5> -Encrypted data</h5>
 <h5> -Instantly send and reveive messages</h5>
-<img src="./readme-assets/1.jpg width="540px" height="1170">
-<img src="./readme-assets/2.jpg">
-<img src="./readme-assets/3.jpg">
-<img src="./readme-assets/4.jpg">
+<br>
+<h5>Welcome screen</h5><br>
+<img src="./readme-assets/1.jpg" width="30%" height="30%">
+<h5>Login screen</h5><br>
+<img src="./readme-assets/2.jpg" width="30%" height="30%">
+<h5>Chat screen</h5><br>
+<img src="./readme-assets/3.jpg" width="30%" height="30%">
+<img src="./readme-assets/4.jpg" width="30%" height="30%">
 <h3>Technologies used: <i>Flutter Dart Firebase</i></h3>
